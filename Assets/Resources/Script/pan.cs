@@ -43,7 +43,7 @@ public class pan : MonoBehaviour
             //print("fire");
             if(time == 0){
                 fire.Play(0);
-                time +=1;
+                time = 1;
                 print("fire on");
             }
             if(((xs >=(x-0.1f)) & (xs<(x+0.2f)))& ((xz >=(z-0.1f)) &(xz < (z+0.2f)))){

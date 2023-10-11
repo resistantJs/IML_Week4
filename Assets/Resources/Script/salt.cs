@@ -8,7 +8,7 @@ public class salt : MonoBehaviour
     public float y;
     public float z;
     public AudioSource shake;
-    private int time;
+    public int time;
 
     // Start is called before the first frame update
     void Start()
@@ -25,18 +25,16 @@ public class salt : MonoBehaviour
         y = transform.eulerAngles.y;
         z = transform.eulerAngles.z;
 
-        if (z > 80){
-
-            print("shake");
+        if (z > 100 && z < 200){
             if(time == 0){
+                print("shake");
                 shake.Play(0);
-                time +=1;
+                time = 1;
             }
-            
         }
         else{
 
-            shake.Pause();
+            shake.Stop();
             time = 0;
         }
     }
