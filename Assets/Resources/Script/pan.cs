@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class pan : MonoBehaviour
 {
-    private float x,y,z,xz,xs; 
+    private float x,y,z,xz,xs, xy; 
     public AudioSource fire, addsalt, cook;
-    private int time, cooktime;
+    public int time, cooktime;
     public GameObject Steak;
     public Material rawmaterial,cookedmaterial,donematerial;
+    public Text step;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class pan : MonoBehaviour
         y = transform.position.y;
         z = transform.position.z;
         xs = Steak.transform.position.x;
+        xy = Steak.transform.position.y;
         xz = Steak.transform.position.z;
         Steak.GetComponent<MeshRenderer> ().material = rawmaterial;
 
@@ -47,10 +49,21 @@ public class pan : MonoBehaviour
                 if(cooktime ==0){
                     cook.Play(0);
                 }
+                // x = transform.position.x;
+                // y = transform.position.y;
+                // z = transform.position.z;
+                // xs = Steak.transform.position.x;
+                // xy = Steak.transform.position.y;
+                // xz = Steak.transform.position.z;
                 cooktime +=1;
+                // xs = x;
+                // xy= y+0.1f;
+                // xz = z;
                 
                 if (cooktime >3000){
                     Steak.GetComponent<MeshRenderer> ().material = cookedmaterial;
+                    //step.text = "add salt";
+                    print("add");
                 }
                 if(cooktime >8000){
                     Steak.GetComponent<MeshRenderer> ().material = donematerial;
