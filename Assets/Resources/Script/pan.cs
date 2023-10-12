@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class pan : MonoBehaviour
 {
     private float x,y,z,xz,xs, xy; 
+    
     public AudioSource fire, addsalt, cook;
     public int time, cooktime;
     public GameObject Steak,plate;
